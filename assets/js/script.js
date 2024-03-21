@@ -2,7 +2,7 @@
  * Create questions for quiz with options for answers
  */
 
-var questions = [
+const questions = [
     {
         question: "If I make the cocktail 'Dark and Stormy', what spirit am I using?",
         options: ["Rum", "Vodka", "Cachaça"],
@@ -69,7 +69,7 @@ var questions = [
 
 ]
 
-// Variables for keeping track of question and score
+// Variables for keeping track of question and score, global variables
 
 let currentQuestion = 0; 
 let score = 0; 
@@ -84,5 +84,20 @@ let nextButton = document.getElementById("next-btn");
 // Function to deliver question 
 
 function deliverQuestion() = {
-    
+
+    let question = questions[currentQuestion]; 
+    questionBox.textContent = question.question; 
+
+    optionsBox.innerHTML = "";
+
+    for (let i = 0; i < questions.options.length; i++) {
+
+        let option = question.question[i];
+        let optionElement = document.createElement("div"); 
+        optionElement.classList.add("option");
+        optionElement.textContent = `${i + 1}.${option}`;
+        optionElement.addEventListener("click", () => selectOptions(option));
+        optionsBox.appendChild(optionElement); 
+    }
+
 }
