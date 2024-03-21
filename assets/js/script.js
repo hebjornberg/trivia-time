@@ -76,14 +76,14 @@ let score = 0;
 
 // Create variables from DOM elements
 
-let quetionBox = document.getElementById("questions-box");
+let questionBox = document.getElementById("questions-box");
 let optionsBox = document.getElementById("options-box");
 let answerBox = document.getElementById("answer-box");
 let nextButton = document.getElementById("next-btn");
 
 // Function to deliver question 
 
-function deliverQuestion() = {
+function deliverQuestion() {
 
     let question = questions[currentQuestion]; 
     questionBox.textContent = question.question; 
@@ -92,7 +92,7 @@ function deliverQuestion() = {
 
     for (let i = 0; i < question.options.length; i++) {
 
-        let option = question.question[i];
+        let option = question.options[i];
         let optionElement = document.createElement("div"); 
         optionElement.classList.add("option");
         optionElement.textContent = `${i + 1}.${option}`;
@@ -108,7 +108,7 @@ function selectOption(selectOption) {
 
     let question = questions[currentQuestion];
 
-    if (selectOption === question.answer) {
+    if (selectOption === questions.correctAnswer) {
         score++;
     }
     currentQuestion++; 
@@ -119,3 +119,14 @@ function selectOption(selectOption) {
         nextButton.style.display = "block";
     }
 }
+
+// Function to show correct answer
+function showAnswer() {
+
+    answerBox.style.display = "block";
+    answerBox.textContent = `Your score: ${score} out of ${questions.length}`; 
+    nextButton.style.display = "none";
+
+}
+
+deliverQuestion(); 

@@ -21,19 +21,19 @@ body {
 
     display: flex;
     flex-direction: column;
-    align-items: center; 
+    align-items: algin-self; 
     margin-bottom: 20px; 
 }
 
 /* Result box*/
 
-#result-box {
+#answer-box {
 
     background-color: white;
 }
 
-/*Option created in function */
+/* Option created in function */
 
 .option {
-    margin: 10px; 
+    margin-bottom: 1em; 
 }
