@@ -6,18 +6,18 @@ body {
     background-color: coral;
 }
 
-/* Quiz container */
+/* Quiz box */
 
-#quiz-container {
+#quiz-box {
 
     max-width: 500px;
     margin: 0 auto;
     background-color: gray;
 }
 
+/* Options box */
 
-
-#options-container {
+#options-box {
 
     display: flex;
     flex-direction: column;
