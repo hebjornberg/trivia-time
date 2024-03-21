@@ -31,3 +31,9 @@ body {
 
     background-color: white;
 }
+
+/*Option created in function */
+
+.option {
+    margin: 10px; 
+}

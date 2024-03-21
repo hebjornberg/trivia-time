@@ -90,14 +90,32 @@ function deliverQuestion() = {
 
     optionsBox.innerHTML = "";
 
-    for (let i = 0; i < questions.options.length; i++) {
+    for (let i = 0; i < question.options.length; i++) {
 
         let option = question.question[i];
         let optionElement = document.createElement("div"); 
         optionElement.classList.add("option");
         optionElement.textContent = `${i + 1}.${option}`;
-        optionElement.addEventListener("click", () => selectOptions(option));
+        optionElement.addEventListener("click", () => selectOption(option));
         optionsBox.appendChild(optionElement); 
     }
 
+}
+
+// Function for the selected option 
+
+function selectOption(selectOption) {
+
+    let question = questions[currentQuestion];
+
+    if (selectOption === question.answer) {
+        score++;
+    }
+    currentQuestion++; 
+    if (currentQuestion === questions.length) {
+        showAnswer();
+    } else {
+        deliverQuestion();
+        nextButton.style.display = "block";
+    }
 }
