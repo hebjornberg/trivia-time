@@ -24,3 +24,10 @@ body {
     align-items: center; 
     margin-bottom: 20px; 
 }
+
+/* Result box*/
+
+#result-box {
+
+    background-color: white;
+}
